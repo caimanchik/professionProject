@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web разработчик</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <aside class="aside">
+        <header class="header">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <img src="{% static 'img/base/logo.png' %}" alt="">
+                    </div>
+                    <div class="header-text">
+                        <div class="first-row">
+                            <span class="tag">&lt;</span>WEB
+                        </div>
+                        <div class="second-row">
+                            analisys<span class="tag">&gt;</span>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <nav class="navigation">
+            <ul class="list-nav">
+                <li class="list-nav-item">
+                    <a class="link-nav" href="">
+                        <span class="link-wrap">Главная</span>
+                    </a>
+                </li>
+                <li class="list-nav-item">
+                    <a class="link-nav" href="">
+                        <span class="link-wrap">Востребованность</span>
+                    </a>
+                </li>
+                <li class="list-nav-item">
+                    <a class="link-nav" href="">
+                        <span class="link-wrap">География</span>
+                    </a>
+                </li>
+                <li class="list-nav-item">
+                    <a class="link-nav" href="">
+                        <span class="link-wrap">Навыки</span>
+                    </a>
+                </li>
+                <li class="list-nav-item">
+                    <a class="link-nav" href="">
+                        <span class="link-wrap">Последние вакансии</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main">
+        <div class="container">
+            <section class="content">
+
+            </section>
+            <footer class="footer">
+                <div class="name">
+                    Волков Кирилл Дмитриевич
+                </div>
+                <div class="group">
+                    РИ-210914
+                </div>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
