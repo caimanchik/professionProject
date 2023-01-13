@@ -11,7 +11,7 @@
         <header class="header">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <img src="{% static 'img/base/logo.png' %}" alt="">
+                        <img src="{% static 'img/base/logo2.png' %}" alt="">
                     </div>
                     <div class="header-text">
                         <div class="first-row">
@@ -56,7 +56,8 @@
     <main class="main">
         <div class="container">
             <section class="content">
-
+                {% block content %}
+                {% endblock content %}
             </section>
             <footer class="footer">
                 <div class="name">

@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    something
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content-title">
+        Основная информация по профессии Web-разработчик
+    </div>
+    <div class="inserted">
+        {% for paragraph in object_list %}
+        <div class="inserted-content">
+            <div class="inserted-title">
+                {{ paragraph.title }}
+            </div>
+            <div class="inserted-text">
+                {{ paragraph.text|safe }}
+            </div>
+            <div class="inserted-image">
+                <img src="{{ paragraph.image.url }}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

@@ -140,7 +140,7 @@ body {
 	color: #141513;
 	display: block;
 	border-radius: 5px;
-	transition: all ease .2s;
+	transition: all ease .3s;
 }
 
 .link-nav:hover {
@@ -157,9 +157,9 @@ body {
 .container {
 	min-height: 100vh;
 	width: 100%;
-	padding-left: 350px;
-	display: flex;
-	flex-direction: column;
+	padding-left: 330px;
+	padding-right: 30px;
+	padding-top: 45px;
 }
 
 .content {
@@ -184,3 +184,62 @@ body {
 	margin-bottom: 10px;
 }
 
+.inserted-content {
+	max-width: 900px;
+	margin: 0 auto 40px;
+}
+
+.content-title {
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 28px;
+	margin-bottom: 80px;
+}
+
+.inserted-text {
+	font-size: 17px;
+	line-height: 1.5;
+	margin-bottom: 30px;
+}
+
+.inserted-text > p {
+	margin-bottom: 10px;
+}
+
+.inserted-text > p:last-child {
+	margin: 0;
+}
+
+.inserted-text > ul {
+	padding-left: 40px;
+}
+
+.inserted-text > ul > li {
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.inserted-text > ul > li:after {
+	content: '';
+
+}
+
+.inserted-title {
+	font-size: 20px;
+	color: #dfb1e8;
+	margin-bottom: 15px;
+}
+
+.inserted-image {
+	width: calc(100% - 200px);
+	overflow: hidden;
+	border-radius: 10px;
+	margin: 0 auto 30px;
+	/*box-shadow: 0 0 20px -10px #bababa;*/
+}
+
+.inserted-image > img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
