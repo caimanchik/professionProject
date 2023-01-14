@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="content-title">
+        География профессии Web-разработчик
+    </div>
+
+    <div class="inserted">
+        <div class="inserted-content">
+            <div class="inserted-title title-small">
+                Статистика по городам
+            </div>
+            <div class="wrapper-table">
+                <div class="small">
+                    <table>
+                        <thead class="thead">
+                            <tr>
+                                <th>Город</th>
+                                <th>Уровень зарплат</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for row in rows_sal %}
+                                <tr>
+                                    <th>{{ row.city }}</th>
+                                    <th>{{ row.salary }}</th>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="small">
+                    <table>
+                        <thead class="thead">
+                            <tr>
+                                <th>Город</th>
+                                <th>Доля вакансий</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for row in rows_fr %}
+                                <tr>
+                                    <th>{{ row.city }}</th>
+                                    <th>{{ row.fraction }}%</th>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="inserted-image bottom">
+                <img src="{{ salary.image.url }}" alt="">
+            </div>
+            <div class="inserted-image">
+                <img src="{{ fraction.image.url }}" alt="">
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

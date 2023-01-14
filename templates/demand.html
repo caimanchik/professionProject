@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="content-title">
+        Востребованность профессии Web-разработчик
+    </div>
+
+    <div class="inserted">
+        <div class="inserted-content">
+            <div class="inserted-title title-small">
+                Статистика по средней зарплате
+            </div>
+            <table class="large">
+                <thead class="thead">
+                    <tr>
+                        <th>Год</th>
+                        <th>Средняя зарплата</th>
+                        <th>Средняя зарплата - Web-программист</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in rows %}
+                        <tr>
+                            <th>{{ row.year }}</th>
+                            <th>{{ row.salary }}</th>
+                            <th>{{ row.salary_vac }}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="inserted-image">
+                    <img src="{{ salary.image.url }}" alt="">
+                </div>
+            </div>
+        <div class="inserted-content">
+            <div class="inserted-title title-small">
+                Статистика по вакансиям
+            </div>
+            <table class="large">
+                <thead class="thead">
+                    <tr>
+                        <th>Год</th>
+                        <th>Количество вакансий </th>
+                        <th>Количество вакансий - Web-программист</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in rows %}
+                        <tr>
+                            <th>{{ row.year }}</th>
+                            <th>{{ row.count }}</th>
+                            <th>{{ row.count_vac }}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="inserted-image">
+                    <img src="{{ count.image.url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

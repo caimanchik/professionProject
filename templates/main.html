@@ -7,17 +7,17 @@
     </div>
     <div class="inserted">
         {% for paragraph in object_list %}
-        <div class="inserted-content">
-            <div class="inserted-title">
-                {{ paragraph.title }}
+            <div class="inserted-content">
+                <div class="inserted-title">
+                    {{ paragraph.title }}
+                </div>
+                <div class="inserted-text">
+                    {{ paragraph.text|safe }}
+                </div>
+                <div class="inserted-image">
+                    <img src="{{ paragraph.image.url }}" alt="">
+                </div>
             </div>
-            <div class="inserted-text">
-                {{ paragraph.text|safe }}
-            </div>
-            <div class="inserted-image">
-                <img src="{{ paragraph.image.url }}" alt="">
-            </div>
-        </div>
         {% endfor %}
     </div>
 {% endblock content %}
