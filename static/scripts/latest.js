@@ -2,8 +2,8 @@ let days = document.querySelectorAll('.day')
 let urlStart = "https://api.hh.ru/vacancies"
 let spec = ['web develop', 'веб разработчик', 'web разработчик', 'web programmer', 'web программист', 'веб программист', 'битрикс разработчик', 'bitrix разработчик', 'drupal разработчик', 'cms разработчик', 'wordpress разработчик', 'wp разработчик', 'joomla разработчик', 'drupal developer', 'cms developer', 'wordpress developer', 'wp developer', 'joomla developer']
 let text = spec.map(e => "'" + e + "'").join(' OR ')
-console.log(text)
 let vacsElement = document.querySelector('.vacancies')
+let loading = document.querySelector('.loading')
 
 function removeSelected() {
     days.forEach(e => e.classList.remove('selected'))
@@ -12,6 +12,8 @@ function removeSelected() {
 function loadVacancies(e) {
     e.classList.add('selected')
     vacsElement.innerHTML = ''
+    loading.classList.remove('hidden')
+
     getVacancies(e.innerHTML.trim())
         .then((vacs) => {
             updateVacancies(vacs)
@@ -20,9 +22,9 @@ function loadVacancies(e) {
 
 function updateVacancies(vacs) {
     vacs.sort((a, b) => a.published_at > b.published_at)
+    loading.classList.add('hidden')
 
     vacs.forEach(vacancy => {
-        console.log(vacancy)
         let vacElement = createElem('', 'vacancy')
 
         vacElement.append(createField('Название', vacancy.name))
@@ -30,11 +32,26 @@ function updateVacancies(vacs) {
         vacElement.append(createField('Навыки',
             vacancy.key_skills.length > 0 ? vacancy.key_skills.map(e => e.name).join(', ') : 'Не указано'))
         vacElement.append(createField('Компания', vacancy.employer.name))
+        vacElement.append(createField('Оклад', getSalary(vacancy)))
         vacElement.append(createField('Название региона', vacancy.area.name))
         vacElement.append(createField('Дата публикации', vacancy.published_at.replace('2023-01', '2022-12')))
 
         vacsElement.append(vacElement)
     })
+}
+
+function getSalary(vacancy) {
+    if (!vacancy.salary || !vacancy.salary.from && !vacancy.salary.to)
+        return 'Не указано'
+
+    let salary = 0
+
+    salary += vacancy.salary.from ?  parseInt(vacancy.salary.from) : parseInt(vacancy.salary.to)
+    salary += vacancy.salary.to ?  parseInt(vacancy.salary.to) : parseInt(vacancy.salary.from)
+
+    salary /= 2
+
+    return salary.toString() + (vacancy.salary.currency ? ' ' + vacancy.salary.currency : '')
 }
 
 function createElem(content, className) {

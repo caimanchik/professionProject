@@ -9,6 +9,9 @@
 
     <div class="inserted">
         <div class="inserted-content content-small">
+            
+
+            
             <div class="days-wrap">
                 {% for day in days %}
                     <div class="day">
@@ -16,8 +19,15 @@
                     </div>
                 {% endfor %}
             </div>
+            <div class="loading">
+                <div class="loading-text">
+                    Идет загрузка с сайта hh.ru
+                </div>
+                <div class="loading-image">
+                    <img src="{% static 'img/load.svg' %}" alt="" width="30" height="30">
+                </div>
+            </div>
             <div class="vacancies">
-
             </div>
         </div>
     </div>
