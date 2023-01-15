@@ -175,7 +175,7 @@ body {
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	left: 35px;
 	bottom: 35px;
 	background: #141513;
@@ -194,8 +194,8 @@ body {
 
 .inserted-content {
 	max-width: 900px;
-	margin: 0 auto 40px;
-	padding-bottom: 30px;
+	margin: 0 auto;
+	padding-bottom: 35px;
 }
 
 .content-title {
@@ -308,4 +308,63 @@ th {
 
 .small {
 	font-size: 18px;
+}
+
+.days-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5px;
+	/*gap: 8px;*/
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.day {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	line-height: 1em;
+	cursor: pointer;
+	background-color: #141513;
+	color: #f0f1ff;
+	border: 1px solid #f0f1ff;
+}
+
+.content-small {
+	max-width: 1300px;
+}
+
+.day.selected {
+	background-color: #f0f1ff;
+	color: #141513;
+}
+
+.vacancy {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border: 1px solid #f0f1ff;
+	border-radius: 15px;
+	margin-bottom: 30px;
+}
+
+.field {
+	display: flex;
+	gap: 30px;
+	flex: 0 0 100%;
+}
+
+.field-name {
+	flex: 0 0 20%;
+	line-height: 16px;
+}
+
+.field-content {
+	flex-grow: 1;
 }

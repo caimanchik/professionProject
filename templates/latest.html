@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="content-title">
+        Вакансии Web-разработчика за любой прошедший день декабря
+    </div>
+
+    <div class="inserted">
+        <div class="inserted-content content-small">
+            <div class="days-wrap">
+                {% for day in days %}
+                    <div class="day">
+                        {{ day }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="vacancies">
+
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'scripts/latest.js' %}"></script>
+{% endblock content %}

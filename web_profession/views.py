@@ -49,3 +49,13 @@ class SkillsView(TemplateView):
             ctx[y['year']] = Skill.objects.filter(year=y['year']).order_by('-count')
 
         return {'data': ctx}
+
+
+class LatestView(TemplateView):
+
+    template_name = 'latest.html'
+
+    def get_context_data(self, **kwargs):
+        return {
+            'days': range(1, 32)
+        }
