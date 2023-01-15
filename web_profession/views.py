@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from web_profession.models import AboutParagraph, YearStats, ImageStat, CitySal, CityFract, Skill
+from web_profession.models import AboutParagraph, YearStats, ImageStat, CitySal, Skill, CityLevel
 
 
 # Create your views here.
@@ -31,7 +30,7 @@ class GeographyView(TemplateView):
     def get_context_data(self, **kwargs):
         return {
             "rows_sal": CitySal.objects.all().order_by('-salary'),
-            "rows_fr": CityFract.objects.all().order_by('-fraction'),
+            "rows_fr": CityLevel.objects.all().order_by('-fraction'),
             "salary": ImageStat.objects.get(name="geo_salary"),
             "fraction": ImageStat.objects.get(name="geo_fract"),
         }

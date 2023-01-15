@@ -42,21 +42,13 @@ class CitySal(models.Model):
         return self.city
 
 
-class CityFract(models.Model):
+class CityLevel(models.Model):
 
     city = models.CharField(max_length=20)
-    fraction = models.IntegerField()
+    fraction = models.FloatField()
 
     def __str__(self):
         return self.city
-
-
-# class Years(models.Model):
-#
-#     year = models.IntegerField()
-#
-#     def __str__(self):
-#         return str(self.year)
 
 
 class Skill(models.Model):
