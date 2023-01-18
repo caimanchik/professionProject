@@ -3,8 +3,6 @@ from django.views.generic import TemplateView, ListView
 from web_profession.models import AboutParagraph, YearStats, ImageStat, CitySal, Skill, CityLevel
 
 
-# Create your views here.
-
 class MainView(ListView):
 
     model = AboutParagraph
