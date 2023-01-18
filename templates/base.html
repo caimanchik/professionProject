@@ -26,27 +26,27 @@
         <nav class="navigation">
             <ul class="list-nav">
                 <li class="list-nav-item">
-                    <a class="link-nav" href="{% url 'main' %}">
+                    <a class="link-nav home" href="{% url 'main' %}">
                         <span class="link-wrap">Главная</span>
                     </a>
                 </li>
                 <li class="list-nav-item">
-                    <a class="link-nav" href="{% url 'demand' %}">
+                    <a class="link-nav demand" href="{% url 'demand' %}">
                         <span class="link-wrap">Востребованность</span>
                     </a>
                 </li>
                 <li class="list-nav-item">
-                    <a class="link-nav" href="{% url 'geo' %}">
+                    <a class="link-nav geo" href="{% url 'geo' %}">
                         <span class="link-wrap">География</span>
                     </a>
                 </li>
                 <li class="list-nav-item">
-                    <a class="link-nav" href="{% url 'skills' %}">
+                    <a class="link-nav skills" href="{% url 'skills' %}">
                         <span class="link-wrap">Навыки</span>
                     </a>
                 </li>
                 <li class="list-nav-item">
-                    <a class="link-nav" href="{% url 'latest' %}">
+                    <a class="link-nav latest" href="{% url 'latest' %}">
                         <span class="link-wrap">Последние вакансии</span>
                     </a>
                 </li>
@@ -71,5 +71,6 @@
     </main>
     {% block scripts %}
     {% endblock scripts %}
+    <script src="{% static 'scripts/script.js' %}"></script>
 </body>
 </html>

@@ -151,6 +151,11 @@ body {
 	transition: all ease .3s;
 }
 
+.link-nav.selected {
+	background-color: #868686;
+	color: #f0f1ff;
+}
+
 .link-nav:hover {
 	background-color: #141513;
 	color: #f0f1ff;
