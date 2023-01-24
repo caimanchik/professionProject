@@ -43,7 +43,12 @@ class SkillsView(TemplateView):
         ctx = {}
 
         for y in years:
-            ctx[y['year']] = Skill.objects.filter(year=y['year']).order_by('-count')
+            print(f"{y['year']}")
+            ctx[y['year']] = {}
+            ctx[y['year']]['skills'] = Skill.objects.filter(year=y['year']).order_by('-count')
+            ctx[y['year']]['image'] = ImageStat.objects.get(name=y['year'])
+
+        print(ctx)
 
         return {'data': ctx}
 

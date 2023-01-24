@@ -9,7 +9,7 @@
     <div class="inserted">
         <div class="inserted-content">
             <div class="skill-wrapper">
-                {% for year, skills in data.items %}
+                {% for year, year_data in data.items %}
                     <div class="skill">
                         <div class="inserted-title">
                             {{ year }}
@@ -24,7 +24,7 @@
                                 </thead>
 
                                 <tbody>
-                                    {% for skill in skills %}
+                                    {% for skill in year_data.skills %}
                                         <tr>
                                             <th>{{ skill.name }}</th>
                                             <th>{{ skill.count }}</th>
@@ -32,6 +32,9 @@
                                     {% endfor %}
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="skill-image">
+                            <img src="{{ year_data.image.image.url }}" alt="картинка">
                         </div>
                     </div>
                 {% endfor %}

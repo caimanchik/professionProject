@@ -299,20 +299,37 @@ th {
 
 .skill-wrapper {
 	display: flex;
-	width: calc(100% - 100px);
+	width: 100%;
 	margin: 0 auto;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	gap: 10px;
+	justify-content: space-between;
+	text-align: center;
 }
 
 .skill {
-	flex: 0 0 30%;
-	margin-bottom: 30px;
+	flex: 0 0 50%;
+	/*margin-bottom: 30px;*/
+	padding: 15px 5px;
 }
 
 .small {
 	font-size: 18px;
+}
+
+.small > table {
+	margin: 0 auto;
+}
+
+.skill-image {
+	margin-top: 20px;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.skill-image > img {
+	width: 100%;
+	height: auto;
 }
 
 .days-wrap {
